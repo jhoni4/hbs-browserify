@@ -13,45 +13,14 @@ Handlebars.registerHelper("inc", function(value) {
   return parseInt(value) + 1;
 });
 
-// attach our rendered HTML to the DOM
-$("#entryOutput").append(entryTemplate(entryData));
+var solarTemplate = require('../templates/article/article2.hbs');
+var entryData = require('../templates/article/article2-data.js');
 
-var solarSystemData = {
-  planets: [
-    {
-      type: "rocky",
-      name: "Mercury"
-    },
-    {
-      type: "rocky",
-      name: "Venus"
-    },
-    {
-      type: "rocky",
-      name: "Earth"
-    },
-    {
-      type: "rocky",
-      name: "Mars"
-    },
-    {
-      type: "gas giant",
-      name: "Jupiter"
-    },
-    {
-      type: "gas giant",
-      name: "Saturn"
-    },
-    {
-      type: "ice giant",
-      name: "Uranus"
-    },
-    {
-      type: "ice giant",
-      name: "Neptune"
-    }
-  ]
-};
+
+$("#button").click(function(){
+  $("#entryOutput2").append(solarTemplate(entryData));
+});
+
 
 
 
